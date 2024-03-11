@@ -1,6 +1,7 @@
 .omz
 bin/nvim
 nvim/lazy-lock.json
+nvim/lazyvim.json
 nvim/dashboard
 nvim/luac
 tldr/*
@@ -11,4 +12,7 @@ p10k*
 matplotlib
 autojump
 pip
-zcom*
+.zcom*
+gitstatus
+state.yml
+

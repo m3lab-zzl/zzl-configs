@@ -2,6 +2,7 @@ lastupdatecheck: 0
 recentrepos:
 - /home/zzl/zzl-configs
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- q
 hidecommandlog: false
 ignorewhitespaceindiffview: false
