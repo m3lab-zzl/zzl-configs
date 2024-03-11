@@ -9,5 +9,6 @@ lazygit/*
 miniforge-pypy3
 p10k*
 matplotlib
-
-
+autojump
+pip
+zcom*

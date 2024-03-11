@@ -1,7 +1,17 @@
-export MAMBARC=.mambarc
+export MAMBARC=$PWD/.mambarc
+if [[ $SHELL == "/bin/zsh" ]]; then 
+	pref=$HOME/miniforge-pypy3
+else
+	pref=$PWD/miniforge-pypy3
+fi
 
+if [[ -e "Miniforge-pypy3-$(uname)-$(uname -m).sh" ]]; then
+bash Miniforge-pypy3-$(uname)-$(uname -m).sh -b -p $pref
+else
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-pypy3-$(uname)-$(uname -m).sh"
-bash Miniforge3-$(uname)-$(uname -m).sh -b
+bash Miniforge-pypy3-$(uname)-$(uname -m).sh -b -p $pref
+fi
 
-source miniforge-pypy3/bin/activate
+source $pref/bin/activate 
 python install_tools.py
+cp zshrc .zshrc

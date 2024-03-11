@@ -1,4 +1,3 @@
-auto_activate_base: false
 channels:
   - defaults
 show_channel_urls: true
@@ -14,4 +13,4 @@ custom_channels:
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/clo
