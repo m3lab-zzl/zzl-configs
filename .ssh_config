@@ -1,0 +1,50 @@
+Host HPro
+  HostName 116.204.113.248
+  User hzwhpro
+  Port 5000
+Host xian
+  HostName 116.204.113.248
+  Port 5001
+  User hzw1006
+Host nm
+  HostName 60.31.21.42
+  Port 8887
+  User df101508
+Host hwy
+  HostName 116.204.71.96
+  Port 22
+  User hw101074
+Host bxy
+  HostName 36.103.203.6
+  Port 22
+  User scfa4767
+
+Host dp-xian
+  HostName 116.204.113.248
+  Port 5000
+  User hzw1002
+Host gtl-xian
+  HostName 116.204.113.248
+  User hzw1020
+  Port 5001
+Host xian1024
+  HostName 116.204.113.248
+  Port 5001
+  User hzw1024
+
+Host nm1101
+  HostName 60.31.21.42
+  Port 8887
+  User nm1101
+Host nm1003
+  HostName 60.31.21.42
+  Port 8887
+  User nm1003
+
+Host 10.1.20.210
+  HostName 10.1.20.210
+  User hzw1001
+Host kanojo
+  HostName 10.15.22.191
+  User dimh
+  Port 22112  

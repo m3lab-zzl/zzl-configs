@@ -1,0 +1,13 @@
+.omz
+bin/nvim
+nvim/lazy-lock.json
+nvim/dashboard
+nvim/luac
+tldr/*
+zsh_manual/*
+lazygit/*
+miniforge-pypy3
+p10k*
+matplotlib
+
+

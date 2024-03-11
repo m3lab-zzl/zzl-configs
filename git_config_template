@@ -1,0 +1,30 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "gitee"]
+	url = https://gitee.com/deelin-zzl/zzl-configs.git
+	fetch = +refs/heads/*:refs/remotes/gitee/*
+[remote "github"]
+	url = https://github.com/m3lab-zzl/zzl-configs.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "gitlab"]
+	url = https://gitlab.com/m3lab-zzl/zzl-configs.git
+	fetch = +refs/heads/*:refs/remotes/gitlab/*
+[remote "origin"]
+	url = https://gitee.com/deelin-zzl/zzl-configs.git
+	url = https://github.com/m3lab-zzl/zzl-configs.git
+	url = https://gitlab.com/m3lab-zzl/zzl-configs.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+[credential]
+	helper = store
+[safe]
+	directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = diff3
