@@ -57,6 +57,7 @@ run(
 )
 run('git config --global user.name "$(whoami)"')
 run('git config --global user.email "$(whoami)@$(hostname)"')
+run('git config --global core.autocrlf true')
 
 if os.popen("echo $SHELL").read().strip() == "/bin/zsh":
     run(f"zsh {this_dir}/zsh_conf.sh")
