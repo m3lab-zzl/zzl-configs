@@ -30,6 +30,7 @@ package_exe = {
     "tree": "tree",  # show directory tree
     "gcc": "gcc", # new installed terminal may has no c compiler, which will stop the zsh
     "make": "make", 
+    "dos2unix": "dos2unix", 
 }
 to_ins = ["git"]
 for pac, exe in package_exe.items():
@@ -65,3 +66,4 @@ if os.popen("echo $SHELL").read().strip() == "/bin/zsh":
     run(cmd)
 else:
     run(f"bash {this_dir}/bash_conf_zsh.sh")
+run(f"find {this_dir}/.omz -type f -print0 | xargs -0 dos2unix --")
