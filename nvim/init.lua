@@ -2,7 +2,7 @@
 require("config.lazy")
 
 if vim.g.vscode then
-  print("vscode using default theme")
+  print("vscode do not need theme")
 else
   vim.cmd.colorscheme("monokai-nightasty")
 end
