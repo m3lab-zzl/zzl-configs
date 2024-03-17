@@ -60,6 +60,8 @@ alias gt='git log --pretty=oneline --abbrev-commit --graph --decorate'
 alias gp="mv ~/.gitconfig ~/.gitconfig-bk ; git push ; mv ~/.gitconfig-bk ~/.gitconfig"
 alias rg="echo remove gitconfig; mv ~/.gitconfig ~/.gitconfig-bk"
 alias gg='echo get gitconfig; mv ~/.gitconfig-bk ~/.gitconfig'
+alias sq='squeue'
+alias sb='sbatch'
 
 if [ -x "$(command -v brew)" ]; then
 	alias gx='brew update; brew upgrade & mamba update --all -y & omz update & tldr --update'
