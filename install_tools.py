@@ -22,6 +22,7 @@ package_exe = {
     "lazygit": "lazygit",
     "nodejs": "node",
     "fd-find": "fd",  # improved find
+    "ripgrep": "ripgrep",  # live grep
     "fzf": "fzf",  # fuzzy finder
     "jq": "jq",  # json cli processor
     "bat": "bat",  # improved cat
