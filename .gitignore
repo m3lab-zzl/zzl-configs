@@ -19,3 +19,4 @@ zsh/compcache
 github-copilot/hosts.json
 state.yml
 zsh-5.9
+.zsh_history
