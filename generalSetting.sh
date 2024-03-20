@@ -30,6 +30,7 @@ alias c='code'
 alias n="XDG_CONFIG_HOME=$CONFIG_DIR nvim"
 alias v='vim'
 alias l='lazygit'
+alias g='gitui'
 alias ipy='ipython'
 alias tm="tmux -f $CONFIG_DIR/tmux.conf"
 
@@ -43,6 +44,7 @@ alias sz='source ~/.zshrc'
 alias nz='nvim ~/.zshrc'
 alias cz='code ~/.zshrc'
 
+alias tf='tail -f'
 alias ma='mamba activate'
 alias mb='mamba activate base'
 alias mde='mamba deactivate'

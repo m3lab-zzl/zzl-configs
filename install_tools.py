@@ -1,4 +1,5 @@
 from os import getenv
+
 """Automatically install softwares to reduce work on other computers @zzl """
 import os
 from shutil import which
@@ -19,7 +20,8 @@ mic = "mamba install -c conda-forge -y"
 package_exe = {
     "bpytop": "bpytop",  # beautiful top
     "nvim": "nvim",  # neovim
-    "lazygit": "lazygit",
+    "lazygit": "lazygit",  # go version git ui, built-in lazyvim
+    "gitui": "gitui",  # rust version git ui
     "nodejs": "node",
     "fd-find": "fd",  # improved find
     "ripgrep": "ripgrep",  # live grep
@@ -29,9 +31,9 @@ package_exe = {
     "tmux": "tmux",
     "tldr": "tldr",  # too long dont read
     "tree": "tree",  # show directory tree
-    "gcc": "gcc", # new installed terminal may has no c compiler, which will stop the zsh
-    "make": "make", 
-    "dos2unix": "dos2unix", 
+    "gcc": "gcc",  # new installed terminal may has no c compiler, which will stop the zsh
+    "make": "make",
+    "dos2unix": "dos2unix",
 }
 to_ins = ["git"]
 for pac, exe in package_exe.items():
@@ -59,7 +61,7 @@ run(
 )
 run('git config --global user.name "$(whoami)"')
 run('git config --global user.email "$(whoami)@$(hostname)"')
-run('git config --global core.autocrlf true')
+run("git config --global core.autocrlf true")
 
 if os.popen("echo $SHELL").read().strip() == "/bin/zsh":
     run(f"zsh {this_dir}/zsh_conf.sh")
