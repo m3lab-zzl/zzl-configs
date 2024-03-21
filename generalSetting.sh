@@ -25,19 +25,6 @@ export PATH=$PATH:$HOME/.local/bin
 export MAMBARC=$CONFIG_DIR/.mambarc
 
 # Alias
-# This definition automatically inserts printandexecute
-printandexecute() {
-  { printf Executing; printf ' %q' "$@"; echo; } >&2
-  "$@"
-}
-alias() {
-  for arg; do
-    [[ "$arg" == *=* ]] &&
-    arg="${arg%%=*}=printandexecute ${arg#*=}"
-    builtin alias "$arg"
-  done
-}
-
 alias b='bpytop'
 alias c='code'
 alias n="XDG_CONFIG_HOME=$CONFIG_DIR nvim"
