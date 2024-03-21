@@ -25,6 +25,19 @@ export PATH=$PATH:$HOME/.local/bin
 export MAMBARC=$CONFIG_DIR/.mambarc
 
 # Alias
+# This definition automatically inserts printandexecute
+printandexecute() {
+  { printf Executing; printf ' %q' "$@"; echo; } >&2
+  "$@"
+}
+alias() {
+  for arg; do
+    [[ "$arg" == *=* ]] &&
+    arg="${arg%%=*}=printandexecute ${arg#*=}"
+    builtin alias "$arg"
+  done
+}
+
 alias b='bpytop'
 alias c='code'
 alias n="XDG_CONFIG_HOME=$CONFIG_DIR nvim"
@@ -45,6 +58,7 @@ alias nz='nvim ~/.zshrc'
 alias cz='code ~/.zshrc'
 
 alias tf='tail -f'
+alias sq='squeue --format="%.18i %.9P %.20j %.8u %.1T %.9M %.10l %.1D %R" --me'
 alias ma='mamba activate'
 alias mb='mamba activate base'
 alias mde='mamba deactivate'
