@@ -20,6 +20,7 @@ mic = "mamba install -c conda-forge -y"
 package_exe = {
     "bpytop": "bpytop",  # beautiful top
     "nvim": "nvim",  # neovim
+    "dust": "dust",  # dust
     "lazygit": "lazygit",  # go version git ui, built-in lazyvim
     "gitui": "gitui",  # rust version git ui
     "nodejs": "node",

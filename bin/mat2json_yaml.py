@@ -4,6 +4,7 @@ Convert mat file to json and yaml file
     support both old version (<7.3)
     and new version (>=7.3) of matlab file
 """
+
 # try import pymatreader and numpy, if not exist, install them
 import os
 import json
@@ -12,6 +13,7 @@ from pymatreader import read_mat
 import numpy as np
 import yaml
 from scipy.sparse import csc_matrix
+
 
 def clean_value(value):
     if isinstance(value, np.ndarray):
@@ -26,12 +28,13 @@ def clean_value(value):
     else:
         return value
 
+
 def clean_dict(mat: dict):
-    '''
+    """
     - mat may contain nested dict
     - keys startswith "__" are not needed
     - np.ndarray and scipy.sparse.csc_matrix should be converted to list so that it can be saved as json/yaml
-    '''
+    """
     new_dict = {}
     for key, value in mat.items():
         if key.startswith("__"):
@@ -69,20 +72,12 @@ if __name__ == "__main__":
         matfile = sys.argv[1]
         verbose = True
     else:
-        raise SyntaxError("usage: python mat2json_yaml.py /path/to/your/matfile.mat [verbose]")
+        raise SyntaxError(
+            "usage: python mat2json_yaml.py /path/to/your/matfile.mat [verbose]"
+        )
 
     jsonfile = matfile.strip(".mat") + ".json"
-    if os.path.exists(jsonfile):
-        print(f"{jsonfile} already exists!")
-        flag = input("Override? y/n\n")
-        if flag.startswith("N") or flag.startswith("n"):
-            sys.exit(0)
     mat2json(matfile, jsonfile)
 
     yamlfile = matfile.strip(".mat") + ".yaml"
-    if os.path.exists(yamlfile):
-        print(f"{yamlfile} already exists!")
-        flag = input("Override? y/n\n")
-        if flag.startswith("N") or flag.startswith("n"):
-            sys.exit(0)
     mat2yaml(matfile, yamlfile)
