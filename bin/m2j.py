@@ -11,7 +11,6 @@ import json
 import sys
 from pymatreader import read_mat
 import numpy as np
-import yaml
 from scipy.sparse import csc_matrix
 
 
@@ -22,7 +21,7 @@ def clean_value(value):
         if verbose:
             return value.toarray().tolist()
         else:
-            return "hidden large sparse matrix."
+            return np.shape(value.toarray())
     elif isinstance(value, list):
         return [clean_value(v) for v in value]
     else:
@@ -56,14 +55,6 @@ def mat2json(matfile: str, jsonfile: str):
     print(f"--> {os.path.abspath(jsonfile)} Saved!")
 
 
-def mat2yaml(matfile: str, yamlfile: str):
-    mat = read_mat(matfile)
-    clean_mat = clean_dict(mat)
-
-    yaml.dump(clean_mat, open(yamlfile, "w"))
-    print(f"--> {os.path.abspath(yamlfile)} Saved!")
-
-
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         matfile = sys.argv[1]
@@ -78,6 +69,3 @@ if __name__ == "__main__":
 
     jsonfile = matfile.strip(".mat") + ".json"
     mat2json(matfile, jsonfile)
-
-    yamlfile = matfile.strip(".mat") + ".yaml"
-    mat2yaml(matfile, yamlfile)

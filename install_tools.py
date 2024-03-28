@@ -1,10 +1,9 @@
-from os import getenv
+"""Automatically install softwares to reduce work on other computers @zzl"""
 
-"""Automatically install softwares to reduce work on other computers @zzl """
 import os
 from shutil import which
 
-if os.getenv("MAMBARC") == None:
+if os.getenv("MAMBARC") is None:
     raise ValueError('please run "export MAMBARC=.mambarc" and rerun this script')
 else:
     print(os.getenv("MAMBARC"))
@@ -35,6 +34,7 @@ package_exe = {
     "gcc": "gcc",  # new installed terminal may has no c compiler, which will stop the zsh
     "make": "make",
     "dos2unix": "dos2unix",
+    "jless": "jless",  # cli json / yaml file viewer written in rust
 }
 to_ins = ["git"]
 for pac, exe in package_exe.items():
